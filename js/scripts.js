@@ -20,4 +20,10 @@ let pokemonList = [
         weight: 210,
         types: ["water"],
     },
+      if (pokemonList.height > 5){
+        document.write('<p>', pokemon.name + '-'+ pokemon.height + "Wow, that/s big" '</p>');
+    }
+    else {
+        document.write('<p>', pokemon.name + '-'+ pokemon.height + ';</p>');
+    };
 ];
