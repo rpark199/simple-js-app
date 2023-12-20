@@ -20,10 +20,12 @@ let pokemonList = [
         weight: 210,
         types: ["water"],
     },
-      if (pokemonList.height > 5){
-        document.write('<p>', pokemon.name + '-'+ pokemon.height + "Wow, that/s big" '</p>');
+ ];
+
+for (let i=0; i < pokemonList.length; i++) {
+    if (pokemonList.List[i].height > 2.0) {
+        document.write('<p>', pokemonList[i].name + '(' + pokemonList[i].height + ')- Wow, that\'s big<br>');
+    } else {
+        document.write('<p>', pokemonList[i].name + '(' + pokemonList[i].height + ')<br>');
     }
-    else {
-        document.write('<p>', pokemon.name + '-'+ pokemon.height + ';</p>');
-    };
-];
+}
