@@ -29,3 +29,6 @@ for (let i=0; i < pokemonList.length; i++) {
         document.write('<p>', pokemonList[i].name + '(' + pokemonList[i].height + ')<br>');
     }
 }
+pokemonList.forEach(function(pokemeon) {
+    console.log(pokemon.name);
+});
