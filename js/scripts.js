@@ -29,6 +29,27 @@ for (let i=0; i < pokemonList.length; i++) {
         document.write('<p>', pokemonList[i].name + '(' + pokemonList[i].height + ')<br>');
     }
 }
-pokemonList.forEach(function(pokemeon) {
-    console.log(pokemon.name);
+
+function add(pokemon) {
+    if (typeof pokemon === 'object') {
+        pokemonList.push(pokemon);
+    }
+}
+function getAll() {
+    return pokemonList;
+}
+function filterByName(name){
+    return pokemonList.filter(function(pokemon){
+        return pokemon.name === name;
+    });
+}
+return{
+    add: add,
+    getAll: getAll,
+    filterByName: filterByName,
+};
+})();
+
+pokemonRespository.getAll().forEach(function (pokemon){
+    pokemonRepository.addListItem(pokemon);
 });
