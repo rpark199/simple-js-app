@@ -1,5 +1,5 @@
-let pokemonList = [
-    {
+let pokemonRepository= (function(){
+    let pokemonList = [
         id: 1,
         name: "Charizard",
         height: 1.7,
