@@ -112,7 +112,7 @@ return{
 };
 })();
 
-pokemonRepository.loadlist().then(function(){
+pokemonRepository.loadList().then(function(){
     pokemonRepository.getAll().forEach(function (pokemon){
         pokemonRepository.addListItem(pokemon);
     });
