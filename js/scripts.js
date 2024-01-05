@@ -55,18 +55,27 @@ function addListitem(pokemon) {
     let li=document.createElement('li');
     pokemonList.appendChild(li);
     li.classList.add('pokemon-name-list');
+    
     let button=document.createElement('button');
     button.innerText= pokemon.name;
     li.appendChild(button);
+    
     button.classList.add('pokemon-name-button')
+    addEventListenerToButton(button, pokemon); {
+        button.addEventListener('click', function (event){
+            showDetails(pokemon);
+        });
+    };
+}
+function showDetails(pokemon) {
+    console.log(pokemon)
 }
 return{
     add: add,
     getAll: getAll,
     filterByName: filterByName,
     addListItem: addListItem,
-    loadList: loadList,
-    loadDetails: loadDetails
+    showDetails: showDetails,
 };
 })();
 pokemonRepository.loadList().then(function(){
