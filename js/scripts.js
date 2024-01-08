@@ -48,8 +48,8 @@ let pokemonRepository= (function(){
             return pokemon.name === name;
         });
     }
-function addListitem(pokemon) {
-    let pokemonList=document.querySelector('.pokemon-list');
+function addListItem(pokemon) {
+    let pokemonList=document.querySelector('pokemon-list');
     let li=document.createElement('li');
     pokemonList.appendChild(li);
     li.classList.add('pokemon-name-list');
@@ -68,32 +68,35 @@ function addListitem(pokemon) {
 function showDetails(pokemon) {
     console.log(pokemon)
 }
+
 function loadList() {
     return fetch(apiUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (json) {
-            console.log(json);
-            json.results.forEach(function (item) {
-                let pokemon= {
-                    name:item.name,
-                    detailsUrl: item.url,
-                };
-                add(pokemon);
-                console.log(pokemon);
-            });
-            .catch(function (e) {
-                console.error(e);
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        console.log(json);
+        json.results.forEach(function (item) {
+          let pokemon = {
+            name: item.name,
+            detailsUrl: item.url,
+          };
+          add(pokemon);
+          console.log(pokemon);
         });
-}
+      })
+      .catch(function (e) {
+        console.error(e);
+      });
+  }
+
 return{
     add: add,
     getAll: getAll,
     filterByName: filterByName,
     addListItem: addListItem,
     showDetails: showDetails,
-    loadList: loadList,
+    loadList: loadList
 };
 })();
 pokemonRepository.loadList().then(function(){
