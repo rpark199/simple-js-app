@@ -49,7 +49,7 @@ let pokemonRepository= (function(){
         });
     }
 function addListitem(pokemon) {
-    let pokemonList=document.querySelector('pokemon-list');
+    let pokemonList=document.querySelector('.pokemon-list');
     let li=document.createElement('li');
     pokemonList.appendChild(li);
     li.classList.add('pokemon-name-list');
