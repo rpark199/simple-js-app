@@ -93,6 +93,7 @@ return{
     filterByName: filterByName,
     addListItem: addListItem,
     showDetails: showDetails,
+    loadList: loadList,
 };
 })();
 pokemonRepository.loadList().then(function(){
