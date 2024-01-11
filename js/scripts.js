@@ -72,8 +72,10 @@ function addEventListenerToButton(button, pokemon) {
     });
 }
     
-function showDetails(pokemon) {
-    console.log(pokemon)
+function showDetails(item) {
+    pokemonRepository.loadDetails(item).then(function () {
+        console.log(item);
+    });
 }
 
 function loadList() {
