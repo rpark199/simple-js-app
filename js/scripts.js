@@ -57,22 +57,18 @@ function showDetails(item) {
 }
 
 function loadList() {
-    return fetch(apiUrl)
-      .then(function (response) {
+    return fetch(apiUrl).then(function (response) {
         return response.json();
-      })
-      .then(function (json) {
-        console.log(json);
+      }).then(function (json) {
         json.results.forEach(function (item) {
           let pokemon = {
             name: item.name,
-            detailsUrl: item.url,
+            detailsUrl: item.url
           };
           add(pokemon);
           console.log(pokemon);
         });
-      })
-      .catch(function (e) {
+      }).catch(function (e) {
         console.error(e);
       });
   }
