@@ -1,15 +1,7 @@
 let pokemonRepository= (function(){
-    let pokemonList = []
+    let pokemonList = [];
     let apiUrl= "https://pokeapi.co/api/v2/pokemon/?limit=150";
 
-    for (let i=0; i < pokemonList.length; i++) {
-        if (pokemonList[i].height > 2.0) {
-            document.write('<p>', pokemonList[i].name + '(' + pokemonList[i].height + ')- Wow, that\'s big<br>');
-        } else {
-            document.write('<p>', pokemonList[i].name + '(' + pokemonList[i].height + ')<br>');
-        }
-    }
-    
     function add(pokemon) {
         if (typeof pokemon === 'object' &&
             'name'in pokemon
