@@ -43,6 +43,7 @@ function addEventListenerToButton(button, pokemon) {
 }
     
 //Modal shows display of the pokemon details
+let modalContainer =document.querySelector('#modal-container');
 function showDetails(pokemon) {
     loadDetails(pokemon).then(function() {
         openModal(pokemon);
@@ -64,7 +65,7 @@ function openModal(pokemon) {
     nameElement.innerText = pokemon.name;
 
     let heightElement =document.createElement('p');
-    heightElement.innerText =`height: ${pokemo.height}m`;
+    heightElement.innerText =`height: ${pokemon.height}m`;
 
     let imageElement =document.createElement('img');
     imageElement.src =pokemon.imageUrl;
