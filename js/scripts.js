@@ -56,6 +56,9 @@ function openModal(pokemon) {
     let modal =document.createElement('div');
     modal.classList.add('modal');
 
+    let modalContent =document.createElement('div');
+    modalContent.classList.add('modal-content');
+
     let closeButtonElement =document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'Close';
