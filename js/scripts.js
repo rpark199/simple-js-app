@@ -41,7 +41,37 @@ function addEventListenerToButton(button, pokemon) {
         showDetails(pokemon);
     });
 }
-    
+
+function loadList() {
+    return fetch(apiUrl).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        json.results.forEach(function (item) {
+          let pokemon = {
+            name: item.name,
+            detailsUrl: item.url
+          };
+          add(pokemon);
+          console.log(pokemon);
+        });
+      }).catch(function (e) {
+        console.error(e);
+      });
+  }
+
+function loadDetails(item) {
+    let url= item.detailsUrl;
+    return fetch(url).then(function (response) {
+        return response.json();
+    }).then(function (details) {
+        item.imageUrl= details.sprites.front_default;
+        item.height= details.height;
+        item.types= details.types;
+    }).catch(function (e) {
+        console.error(e);
+    });
+}
+
 //Modal shows display of the pokemon details
 let modalContainer =document.querySelector('#modal-container');
 function showDetails(pokemon) {
@@ -102,37 +132,6 @@ modalContainer.addEventListener('click', (e) => {
         hideModal();
     }
 });
-
-function loadList() {
-    return fetch(apiUrl).then(function (response) {
-        return response.json();
-      }).then(function (json) {
-        json.results.forEach(function (item) {
-          let pokemon = {
-            name: item.name,
-            detailsUrl: item.url
-          };
-          add(pokemon);
-          console.log(pokemon);
-        });
-      }).catch(function (e) {
-        console.error(e);
-      });
-  }
-
-function loadDetails(item) {
-    let url= item.detailsUrl;
-    return fetch(url).then(function (response) {
-        return response.json();
-    }).then(function (details) {
-        item.imageUrl= details.sprites.front_default;
-        item.height= details.height;
-        item.types= details.types;
-    }).catch(function (e) {
-        console.error(e);
-    });
-}
-
 return{
     add: add,
     getAll: getAll,
