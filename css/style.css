@@ -1,79 +1,31 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #03695b;
-    font-weight: 400;
-    font-size: 14px;
-    text-align: center;
-    line-height: 1.3;
-    color: white;
-    margin:0;
-}
-
-.headline{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    border: 1px solid #03695b; 
-    color:#03695b;
-    background-color: white;
-}
-h1 {
-    margin: 24px 0 40px 0;
-    font-size: 40px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.pokemon-name-list{
-    list-style-type: none;
- 
-}
-button{
-    width: 100%;
-    text-align: center;
-    padding: 16px;
-    margin: 4px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;    
-}
-.pokemon-list{
-    /* display: inline-block;
-    align-items: center;  */
-    max-width: 500px;
-    margin-top: 24px;
-    padding: 0;
-}
-
-/* Media Query for mobile and tablet screens up to 767px and below */
-@media all and ( max-width: 499px){
-    .pokemon-list{
-        width:100%;
-    
-    }
-}
-/* Setting media queries for screens sizes from 500px and above */
-@media all and (min-width: 500px ){
-    .pokemon-list{
-        display: inline-block;
-        align-items: center;
-        width: 500px;
-    }
-  h1{
+h1{
     font-size: 44px;
+    color: #000000;
+}
 
+.name-btn {
+    background-color: #bae1ff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16;
+    margin: 10px 15px;
+    padding: 15px;
 }
-button{
-    font-size: 17px;
- 
+
+.row {
+    margin-top: 100px;
 }
-#modal-container {
+
+.navbar {
+    background-color: #ffdfba;
+    padding: 8px 24px;
+}
+.modal {
     display: none;
 }
 
-#modal-container.is-visible {
+.modal-container.is-visible {
     position: fixed;
     padding: 20px;
     box-sizing: border-box;
@@ -81,7 +33,7 @@ button{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: #ffb3ba;
 
     z-index: 999;
 
@@ -89,18 +41,16 @@ button{
 
     display: grid;
     text-align: center;
-    color: #black;
 }
 
-.modal {
+.modal-content {
     margin: auto;
     display: inline-block;
     box-sizing: border-box;
-    background:#fff;
     padding: 15px;
     width: 100%;
     max-width: 700px;
-    text-align: left;
+    text-align: center;
 }
 
 .modal-close {
@@ -126,5 +76,4 @@ ul {
 
 li {
     margin-bottom: 10px;
-}
 }
